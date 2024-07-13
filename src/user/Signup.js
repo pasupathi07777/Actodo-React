@@ -8,7 +8,7 @@ const Signup = () => {
   let { setuserName, userName, userpass, setuserpass, handleSumit } = useContext(arrProvider)
 
   return (
-    <div className="bg-black w-full  h-[100vh] flex items-center px-3  justify-center ">
+    <div className="bg-black w-full  h-[100vh] flex items-center px-3  justify-center  overflow-hidden">
 
       <div className="flex flex-col   px-3   py-10 bg-white rounded-md  w-full  sm:px-10 min-h-[350px] ">
 

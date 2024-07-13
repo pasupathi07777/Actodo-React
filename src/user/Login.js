@@ -7,7 +7,7 @@ const Login = () => {
   let { userName, setuserName, userpass, setuserpass, handleSumit, alert, setalert } = useContext(arrProvider)
 
   return (
-    <div className="bg-black w-full h-[100vh] flex items-center px-3  ">
+    <div className="bg-black w-full h-[100vh] flex items-center px-3  overflow-hidden ">
 
       <div className="flex flex-col   bg-white rounded-md w-full px-3   py-10 sm:px-10 min-h-[350px]  ">
         <h1 className='font-semibold text-[24px] sm:text-[32px]'>Hey Hi</h1>
