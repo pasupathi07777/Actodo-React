@@ -5,26 +5,28 @@ import { arrProvider } from '../data/Dataprovider'
 
 const Signup = () => {
 
-    let  {setuserName,userName,userpass,setuserpass,handleSumit}=useContext(arrProvider)
+  let { setuserName, userName, userpass, setuserpass, handleSumit } = useContext(arrProvider)
 
   return (
-    <div className="bg-black w-full ">
+    <div className="bg-black w-full  h-[100vh] flex items-center px-3  justify-center ">
 
-      <div className="flex flex-col gap-2 px-10 py-10 bg-white rounded-md ">
+      <div className="flex flex-col   px-3   py-10 bg-white rounded-md  w-full  sm:px-10 min-h-[350px] ">
 
-        <h1 className='font-semibold text-[24px]'>Hey Hi</h1>
+        <h1 className='font-semibold text-[24px] sm:text-[32px]'>Hey Hi</h1>
 
-        <p>I help you manage your activities after your login :)</p>
+        <p className=' text-[14px] sm:text-[16px]'>I help you manage your activities after your login :)</p>
 
-        <input type="text" className='border border-black rounded-md focus:outline-none px-2 py-1 max-w-[450px] ' placeholder='username' value={userName} onChange={(event)=>setuserName(event.target.value)} />
+        <div className="all-input flex flex-col  gap-2 mt-3">
+          <input type="text" className='border border-black rounded-md focus:outline-none px-2 py-1 max-w-[450px] ' placeholder='username' value={userName} onChange={(event) => setuserName(event.target.value)} />
 
-        <input type="password" className='border border-black rounded-md focus:outline-none px-2 py-1 max-w-[450px]' placeholder='password'    value={userpass} onChange={(event)=>setuserpass(event.target.value)} />
+          <input type="password" className='border border-black rounded-md focus:outline-none px-2 py-1 max-w-[450px]' placeholder='password' value={userpass} onChange={(event) => setuserpass(event.target.value)} />
 
-        <input type="password" className='border border-black rounded-md focus:outline-none px-2 py-1 max-w-[450px]' placeholder='confirm password' />
+          <input type="password" className='border border-black rounded-md focus:outline-none px-2 py-1 max-w-[450px]' placeholder='confirm password' />
 
-        <button type="button" className='w-fit px-2 py-1 bg-[#CA8201] rounded-md' onClick={()=>{handleSumit("signup")}}>Submit</button>
+          <button type="button" className='w-fit px-2 py-1 bg-yellow-500 rounded-md' onClick={() => { handleSumit("signup") }}>Submit</button>
+        </div>
 
-        <p>Alredy have a account ? <Link onClick={()=>{setuserName("");setuserpass("")}} to={'/'} className='underline' >Login</Link> </p>
+        <p className='mt-2'>Alredy have a account ? <Link onClick={() => { setuserName(""); setuserpass("") }} to={'/'} className='underline text-blue-600 font-semibold' >Login</Link> </p>
 
 
 

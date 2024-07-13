@@ -2,10 +2,18 @@ import React from 'react'
 import { createContext } from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import delIcon from '../accert/img/trash.png'
 let arrProvider = createContext()
 
 
 const Dataprovider = ({ children }) => {
+
+  let date = new Date()
+
+let monthName = date.toLocaleString('en-US', { month: 'long' });
+
+
+  console.log(date)
 
 
   let [dataBase, setdataBase] = useState([])
@@ -18,13 +26,13 @@ const Dataprovider = ({ children }) => {
   let nav = useNavigate()
   let cartDatails = [
     {
-      title: "23",
-      subTitle: "Chennai",
+      title: "23°C",
+      subTitle: "Kanniyakumari",
       bgColor: "#8272DA"
     },
     {
-      title: "20 December",
-      subTitle: "14:03:34",
+      title: monthName,
+      subTitle: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
       bgColor: "#FD6663"
 
     },
@@ -35,6 +43,9 @@ const Dataprovider = ({ children }) => {
     }
   ]
   let handleSumitTwo = () => {
+    if(userInput===""){
+      return
+    }
 
     setdisplay([...display, { id: display.length + 1, detail: userInput }])
     console.log(display)
@@ -55,12 +66,15 @@ const Dataprovider = ({ children }) => {
     if (res === "login") {
 
 
+
       dataBase.forEach((e) => {
         if (e.name === userName && e.pass === userpass) {
           nav('/landing', { state: { name: userName } })
+          setalert(true)
           setuserName("")
           setuserpass("")
           console.log("login success")
+        
 
 
 
@@ -87,7 +101,7 @@ const Dataprovider = ({ children }) => {
   return (
     <arrProvider.Provider value={{
       dataBase, setdataBase, userName, setuserName, userpass, setuserpass, alert, setalert, handleSumit,
-      cartDatails, handleSumitTwo, handleDelete, userInput, setUserInput, display, setdisplay
+      cartDatails, handleSumitTwo, handleDelete, userInput, setUserInput, display, setdisplay,  delIcon
 
 
 

@@ -16,7 +16,7 @@ function App() {
   return (
 
 
-    <div className=' w-full h-[100vh] overflow-y-scroll flex justify-center items-center px-2 md:p-16 bg-black'  >
+    <div className=' w-full p-0 m-0  min-h-[100vh]  flex justify-center items-start py-0 bg-white sm:bg-black '  >
       <Dataprovider>
 
 
