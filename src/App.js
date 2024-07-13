@@ -16,7 +16,7 @@ function App() {
   return (
 
 
-    <div className=' w-full h-[100vh] flex justify-center items-center px-2 md:p-16 bg-black'  >
+    <div className=' w-full h-[100vh] overflow-y-scroll flex justify-center items-center px-2 md:p-16 bg-black'  >
       <Dataprovider>
 
 
